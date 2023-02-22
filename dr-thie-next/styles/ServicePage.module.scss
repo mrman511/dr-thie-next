@@ -1,0 +1,99 @@
+@import './variables.scss';
+@import './buttons.scss';
+
+.service{
+  width: 100%;
+  min-height: calc(95vh - 100px);
+  margin: 2em 0;
+  margin-top: 120px;
+  @include flexColumnCenter;
+  box-shadow: $LBLowShadow;
+  overflow: hidden;
+  
+  .card{
+    width: 90%;
+    max-width: 1200px;
+    margin: 1em 0;
+    @include flexColumnCenter;
+    background-color: white;
+    box-shadow: $LBLowShadow;
+    overflow: hidden;
+  }
+ 
+  .titleCard{
+    max-height: 300px;
+
+    .imageContainer{
+      width: 1200px;
+      height: 300px;
+      position: relative;
+      // transform: translateX(-50%);
+      // left: 50%;
+    }
+    
+    .title{
+      width: 90vw;
+      max-width: 1200px;
+      position: relative;
+      @include flexItemCenter;
+      transform: translateY(-50%);
+      // left: 50%;
+      bottom: 0;
+      background-color: $ribbonColour;
+      
+      h2 {
+        color: white;
+        font-family: $cursiveFont;
+        font-size: 38px;
+      }
+    }
+  }
+
+  .infoContainer{
+    width: 100%;
+    margin: 1em;
+    padding: 1em;
+    text-indent: 1em;
+  }
+
+  @include wireButton(white, $colour1);
+
+  .btn {
+    max-width: 500px;
+    height: auto;
+    margin: 1em 0;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 500px){
+
+  .service{
+
+    .title{
+
+      h2{
+        font-size: 48px;
+      }
+    }
+
+    .btn{
+      font-size: 21px;
+      padding: .25em;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px){
+
+  .service{
+
+    p{
+      font-size: 18px;
+    }
+
+    .btn{
+      font-size: 21px;
+    }
+  }
+}

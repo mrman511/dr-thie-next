@@ -1,0 +1,126 @@
+@import './variables.scss';
+@import './buttons.scss';
+
+.serviceHeader{
+  width: 100%;
+  padding: 1.25em;
+  position: relative;
+  margin-top: $headerHeight;
+  color: $colour1;
+  background-color: white;
+  box-shadow: $LBLowShadow;
+  border-bottom-left-radius: $xlRadius;
+  border-bottom-right-radius: $xlRadius;
+  
+  z-index: 1;
+  
+  h2{
+    font-family: $cursiveFont;
+    font-size: 58px;
+  }
+}
+
+.serviceList{
+  width: 100%;
+  @include flexRowCenterEven;
+  flex-wrap: wrap;
+  // background-color: $offWhiteBackgroundColour;
+  z-index: 0;
+  
+  .serviceCard{
+    width: 100%;
+    max-width: 350px;
+    margin: 1em 5px;
+    padding: 1em 0;
+    box-shadow: $LBLowShadow;
+    background-color: white;
+    @include flexColumnCenter;
+    
+    .titleContainer{
+      width: 95%;
+      max-height: 300px;
+      @include flexColumnCenter;
+      overflow: hidden;
+      box-shadow: $LBLowShadow;
+      
+      .imageContainer{
+        width: 1200px;
+        height: 300px;
+        position: relative;
+        // transform: translateX(-50%);
+      }
+      
+      .title{
+        width: 100%;
+        padding: .5em 0;
+        position: relative;
+        transform: translateY(-50%);
+        @include flexItemCenter;
+        font-size: 21px;
+        font-family: $cursiveFont;
+        color: white;
+        background-color: $ribbonColour;
+      }
+    }
+    
+    ul{
+      width: 95%;
+      height: 250px;
+      margin-top: 1em;
+      @include flexColumnCenterEven;
+      list-style: none;
+      box-shadow: $LBLowShadow;
+      
+      li {
+        width: 100%;
+        max-height: 25px;
+        font-size: 18px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .svg{
+          width: 25px;
+          height: 28px;
+          margin: 0 .5em;
+
+          .svgPath{
+            fill: $colour4;
+            // stroke-width: 20px;
+            stroke: none;
+            // stroke: rgb(0, 87, 0);
+          }
+        }
+      }
+    }
+    
+    .routes {
+      width: 95%;
+      padding: 1em;
+      @include flexRowCenterBetween;
+      
+      a{
+        width: 55px;
+        height: 55px;
+        @include flexItemCenter;
+        border-radius: 50%;
+        box-shadow: $LBLowShadow;
+
+        .icon{
+          width: calc(55px - 1em);
+          height: calc(55px - 1em);
+          color: $colour1;
+        }
+      }
+
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  
+}
+
+@media only screen and (min-width: 1000px) {
+  
+}

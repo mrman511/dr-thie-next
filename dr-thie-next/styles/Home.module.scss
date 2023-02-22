@@ -1,0 +1,454 @@
+@import './variables.scss';
+@import './keyframes.scss';
+
+.header{
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  @include flexRowCenterBetween;
+  background-color: white;
+  color: $fontColourHeader;
+  box-shadow: $LBLowShadow;
+  z-index: 10;
+
+  .imageContainer{
+    width: 400px;
+    height: 100px;
+    position: relative;
+  }
+
+  .title{
+    position: relative;
+    margin: 0;
+    margin-left: 10%;
+
+    span{
+      font-family: $cursiveFont;
+      font-size: 3em;
+    }
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .mobileNav{
+    width: 100vw;
+    height: 100vh;
+    top: 100px;
+    position: fixed;
+    color: $colour2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23015697'/%3E%3Cstop offset='1' stop-color='%230C2D48'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%230C2D48' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230C2D48' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    z-index: 10;
+
+    ul {
+      font-size: 28px;
+      width: auto;
+      margin: 10%;
+      @include flexColumn;
+      list-style: none;
+
+      li{
+        min-height: 75px;
+        line-height: 1.1em;
+
+        &:hover{
+          color: $colour5;
+
+          li{
+            color: $colour2
+          }
+        }
+      }
+
+      .subMenu{
+        overflow: hidden;
+
+        ul{
+          height: auto;
+          min-height: 250px;
+          margin: 0;
+          margin-left: .5em;
+          font-size: 21px;
+          padding: 16px 0;
+  
+          li{
+            @include flexColumn;
+            justify-content: center;
+            min-height: 45px;
+
+            :hover{
+              color: $colour5;
+            }
+          }
+        }
+      }
+      
+    }
+
+    .icon{
+      margin-left: 1em;
+      max-width: 20px;
+    }
+  }
+}
+
+.alternate{
+  background-color: $colour1;
+
+  .title{
+    color: lighten($colour2, 20%);
+  }
+}
+
+.banner {
+  height: auto;
+  position: relative;
+  margin-top: $headerHeight;
+  background-color: $colour4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%232F4858' width='11' height='11'/%3E%3Crect fill='%232f4858' x='10' width='11' height='11'/%3E%3Crect fill='%232f4858' y='10' width='11' height='11'/%3E%3Crect fill='%232f4757' x='20' width='11' height='11'/%3E%3Crect fill='%232f4757' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%232e4757' y='20' width='11' height='11'/%3E%3Crect fill='%232e4757' x='30' width='11' height='11'/%3E%3Crect fill='%232e4757' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%232e4756' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%232e4656' y='30' width='11' height='11'/%3E%3Crect fill='%232e4656' x='40' width='11' height='11'/%3E%3Crect fill='%232e4656' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%232e4656' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%232d4655' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%232d4655' y='40' width='11' height='11'/%3E%3Crect fill='%232d4555' x='50' width='11' height='11'/%3E%3Crect fill='%232d4555' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%232d4555' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%232d4554' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%232d4554' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%232d4554' y='50' width='11' height='11'/%3E%3Crect fill='%232c4454' x='60' width='11' height='11'/%3E%3Crect fill='%232c4453' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%232c4453' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%232c4453' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%232c4453' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%232c4453' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%232c4352' x='70' width='11' height='11'/%3E%3Crect fill='%232c4352' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%232c4352' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%232b4352' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%232b4352' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%232b4351' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%232b4251' x='80' width='11' height='11'/%3E%3Crect fill='%232b4251' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%232b4251' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%232b4251' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%232b4250' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%232a4250' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%232a4150' x='90' width='11' height='11'/%3E%3Crect fill='%232a4150' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%232a4150' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%232a414f' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%232a414f' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%232a414f' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%232a404f' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%232a404f' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%2329404e' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%2329404e' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%2329404e' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%2329404e' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23293f4e' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23293f4d' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23293f4d' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23293f4d' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23283f4d' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23283f4d' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23283e4c' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23283e4c' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23283E4C' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+
+  .hero{
+    width: 100%;
+    padding-top: 2em;
+    @include flexColumnCenter;
+
+    .imageContainer{
+      width: 300px;
+      height: 500px;
+      max-height: 600px;
+      position: relative;
+      @include flexColumnCenter;
+      justify-content: center;
+    }
+
+    .servicesCard {
+      margin-top: 1em;
+      @include flexColumnCenter;
+      color: $colour2;
+      
+      .servicesTitle{
+        margin-bottom: .5em;
+        font-family: 'Inspiration', cursive;
+        font-size: 2.25em;
+        text-align: center;
+      }
+
+      h4{
+        font-size: 21px;
+      }
+    
+      .services{
+        // width: 215px;
+        @include flexColumn;
+        list-style: none;
+        margin-bottom: 2em;
+        
+        .serviceItem{
+          width: max-content;
+          max-height: 30px;
+          // padding-left: 35px;
+          position: relative;
+          display: flex;
+          margin: .5em;
+          font-size: 1.15em;
+
+          a{
+            width: fit-content;
+            z-index: 1;
+            
+            &:hover{
+              color: $colour5;
+            }
+
+            p{
+              margin-left: 35px;
+            } 
+          }
+    
+          .imageContainer{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            
+            .svgPath{
+              fill: rgba(255, 255, 255, 0);
+              stroke: $colour5;
+              stroke-width: 2px;
+              // stroke-miterlimit: 10;
+              stroke-dashoffset: -410;
+              stroke-dasharray: 410;
+              transition: stroke-dashOffset 8s ease;
+              animation: draw .75s forwards;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.mcbuttonContainer{
+  width: 80px;
+  height: 80px;
+  margin-right: 1em;
+  // border: 1px solid black;
+  
+  
+  .mcbutton{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flexColumnCenter;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: $DBLShadow;
+
+    b{
+      width: 70%;
+      height: 4px;
+      position: absolute;
+      background-color: $colour3;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+////////////////////
+////////MAIN////////
+////////////////////
+
+.main{
+  width: 100%;
+  @include flexColumnCenter;
+  background-color: $offWhiteBackgroundColour;
+}
+
+//////////////////////////
+//////////FOOTER//////////
+//////////////////////////
+
+.footer{
+  width: 100%;
+  padding: 2.5% 1em;
+  @include flexItemCenter;
+  background-color: #553E4C;
+  // color: $colour2;
+  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23553E4C' width='11' height='11'/%3E%3Crect fill='%23553e4c' x='10' width='11' height='11'/%3E%3Crect fill='%23563f4d' y='10' width='11' height='11'/%3E%3Crect fill='%23563f4d' x='20' width='11' height='11'/%3E%3Crect fill='%23573f4e' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23573f4e' y='20' width='11' height='11'/%3E%3Crect fill='%2357404e' x='30' width='11' height='11'/%3E%3Crect fill='%2358404f' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%2358404f' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%2359414f' y='30' width='11' height='11'/%3E%3Crect fill='%23594150' x='40' width='11' height='11'/%3E%3Crect fill='%235a4150' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%235a4251' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%235a4251' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%235b4251' y='40' width='11' height='11'/%3E%3Crect fill='%235b4252' x='50' width='11' height='11'/%3E%3Crect fill='%235c4352' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%235c4352' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%235d4353' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%235d4453' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%235d4454' y='50' width='11' height='11'/%3E%3Crect fill='%235e4454' x='60' width='11' height='11'/%3E%3Crect fill='%235e4554' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%235f4555' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%235f4555' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%235f4656' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23604656' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23604656' x='70' width='11' height='11'/%3E%3Crect fill='%23614657' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23614757' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23624758' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23624758' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23624858' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23634859' x='80' width='11' height='11'/%3E%3Crect fill='%23634859' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23644959' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%2364495a' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%2365495a' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%23654a5b' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23654a5b' x='90' width='11' height='11'/%3E%3Crect fill='%23664a5b' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23664a5c' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23674b5c' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23674b5d' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23684b5d' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23684c5d' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23684c5e' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23694c5e' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23694d5f' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%236a4d5f' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%236a4d5f' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%236b4e60' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%236b4e60' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%236b4e61' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%236c4e61' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%236c4f61' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%236d4f62' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%236d4f62' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%236e5063' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%236E5063' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
+
+  article{
+    width: 100%;
+
+    div{
+      width: 100%;
+
+      ul{
+        list-style: none;
+      }
+      margin-bottom: .75em;
+    }
+    .info{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+  }
+}
+
+///////////////////////////
+///////MEDIA QUERIES///////
+///////////////////////////
+
+@media only screen and (min-width: 400px){
+
+  .banner{
+
+    .header{
+
+      .title{
+        margin: 0;
+        left: 10%
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 650px){
+
+  .banner{
+
+    .hero{
+      height: 90vh;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .imageContainer{
+        height: 100%;
+      }
+    }
+  }
+
+  .blurb{
+    width: 40%;
+    max-width: 450px;
+  }
+
+  .footer{
+    padding: 1.5em 10%;
+
+    article{
+
+      div{
+        @include flexRowCenterBetween;
+
+        h2{
+          width: 200px;
+        }
+
+        ul{
+          width: 350px;
+          @include flexRowCenterEven;
+          
+          li{
+            font-size: 21px;
+          }
+        }
+      }
+
+      .info{
+        flex-direction: row;
+        margin-bottom: 0;
+      }
+
+      .contactInfo{
+        @include flexColumn;
+        width: 200px
+      }
+    }
+  }
+
+}
+
+@media only screen and (min-width: 700px){
+  .footer{
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+
+  .header{
+
+    .mobileNav{
+      display: none;
+    }
+
+    .mcbuttonContainer{
+      display: none;
+    }
+
+    .nav{
+      width: 50%;
+      height: 100%;
+      position: relative;
+      margin-right: 2em;
+      display: block;
+      z-index: 2;
+      
+      ul{
+        width: 100%;
+        height: 100%;
+        @include flexRowCenterEven;
+        color: $colour3;
+        font-size: 21px;
+        font-weight: 700;
+        list-style: none;
+
+        li{
+          width: 150px;
+          height: 100%;
+          @include flexItemCenter;
+
+          
+          a{
+            height: 75%;
+            @include flexRowCenterEven;
+
+            &:hover{
+              color: $colour5;
+              font-size: 28px;
+            }
+
+            .icon{
+              width: 12px;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .selected{
+          color: $whiteBackgroundSelected;
+          font-size: 28px;
+        }
+      }
+
+      .servicesList{
+        width: 100%;
+        position: absolute;
+        top: 80%;
+        left: -50px;
+        background-color: white;
+        overflow: hidden;
+        border-radius: $mdRadius;
+        // z-index: 11;
+        
+        ul{
+          width: 100%;
+          height: auto;
+          padding: 1.5em 0;
+          position: relative;
+          display: grid;
+          grid-template: 1fr 1fr / 1fr 1fr 1fr;
+          grid-template-areas: "1 2 3" "4 5 6";
+          row-gap: 1.5em;
+          font-size: 16px;
+          
+          li{
+            justify-self: center;
+            width: 100%;
+
+            a{
+              text-align: center;
+  
+              &:hover{
+                font-size: 16px;
+              }
+            }
+          }
+
+          .selected{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .alternate{
+    .nav{
+      ul{
+        color: lighten($colour2, 20%)
+      }
+    }
+  }
+
+}

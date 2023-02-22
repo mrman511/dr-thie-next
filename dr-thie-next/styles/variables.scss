@@ -1,0 +1,92 @@
+$headerHeight: 100px;
+
+/////////////////
+/////COLOURS/////
+/////////////////
+$colour1: #0C2D48;
+$colour2: #9BAEBC;
+$colour3: #015697;
+// $colour4: #4D536E;
+$colour4: #2F4858;
+$colour5: #00ADEF;
+
+//fontColours
+$fontColourHeader: $colour3;
+$whiteBackgroundSelected: $colour5;
+
+//Background Colours
+$offWhiteBackgroundColour: rgba($colour5, .1);
+
+//Ribon
+$ribbonColour: rgba($colour4, .75);
+
+///////////////////////
+/////BORDER RADIUS/////
+///////////////////////
+
+$smRadius: 3px;
+$mdRadius: 8px;
+$lgRadius: 14px;
+$xlRadius: 28px;
+
+//SHADING
+
+$DBLShadow: 3px 3px 10px -5px $colour2;
+$DBDeepShadow: 3px 3px 10px $colour3;
+$LBLowShadow: 5px 5px 5px -5px darken($colour3, 20%);
+$LBDeepShadow: 3px 3px 10px darken($colour3, 20%);
+
+//fonts
+
+$cursiveFont: 'Inspiration', cursive;
+
+//////////////////
+///////FLEX//////
+/////////////////
+
+@mixin flexItemCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexRowCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexRowCenterBetween {
+  @include flexRowCenter();
+  justify-content: space-between;
+}
+
+@mixin flexRowCenterEven {
+  @include flexRowCenter();
+  justify-content: space-evenly;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColumnCenter {
+  @include flexColumn();
+  align-items: center;
+}
+
+@mixin flexColumnCenterBetween {
+  @include flexColumnCenter();
+  justify-content: space-between;
+}
+
+@mixin flexColumnCenterEven {
+  @include flexColumnCenter();
+  justify-content: space-evenly;
+}
+
+@mixin fill {
+  width: 100%;
+  height: 100%;
+}
